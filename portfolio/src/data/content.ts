@@ -14,7 +14,7 @@ export const profile = {
 
 export const about = {
   bio: [
-    "I'm a growth and analytics professional with an engineering physics background from IIT (BHU), Varanasi. I've spent my career turning messy, ambiguous problems - pricing, retention, personalization at scale - into data-driven frameworks that ship measurable growth.",
+    "I'm a growth and analytics professional with a physics research background - B.Tech + M.Tech in Engineering Physics from IIT (BHU), Varanasi, followed by a PhD in Physics at IIT Delhi that I left in 2024 to move into industry. That pivot took me from open-ended theoretical problems to turning equally messy, ambiguous ones - pricing, retention, personalization at scale - into data-driven frameworks that ship measurable growth.",
     "At Swiggy Instamart, I've owned growth charters spanning 90+ cities, built pricing and personalization systems reaching over a million users, and been promoted from Business Associate to Growth Manager within 12 months. I like getting close to the data, running fast experiments, and building the org-level playbooks that let a team keep winning after I've moved on.",
   ],
   highlights: [
@@ -110,6 +110,12 @@ export type EducationItem = {
 };
 
 export const education: EducationItem[] = [
+  {
+    degree: "PhD, Physics (left to join industry)",
+    institution: "Indian Institute of Technology Delhi",
+    period: "2023 - 2024",
+    description: "Left the program in 2024 to move into growth and analytics roles in industry.",
+  },
   {
     degree: "B.Tech + M.Tech, Engineering Physics",
     institution: "Indian Institute of Technology (BHU), Varanasi",
