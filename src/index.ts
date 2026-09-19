@@ -13,7 +13,7 @@ if (!geminiApiKey) {
 }
 
 const genAI = new GoogleGenerativeAI(geminiApiKey);
-const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" });
 
 const MAX_HISTORY_TURNS = 10;
 type Turn = { role: "user" | "model"; parts: { text: string }[] };
