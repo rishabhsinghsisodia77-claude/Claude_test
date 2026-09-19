@@ -12,6 +12,11 @@ if (!geminiApiKey) {
   throw new Error("GEMINI_API_KEY environment variable is not set");
 }
 
+const adminChatId = process.env.ADMIN_CHAT_ID;
+if (!adminChatId) {
+  throw new Error("ADMIN_CHAT_ID environment variable is not set");
+}
+
 const genAI = new GoogleGenerativeAI(geminiApiKey);
 const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" });
 
@@ -19,7 +24,22 @@ const MAX_HISTORY_TURNS = 10;
 type Turn = { role: "user" | "model"; parts: { text: string }[] };
 const conversations = new Map<number, Turn[]>();
 
+// Reset on every deploy/restart - fine for a personal-use notification, not persisted storage.
+const notifiedUserIds = new Set<number>();
+
 const bot = new Bot(token);
+
+bot.use(async (ctx, next) => {
+  const from = ctx.from;
+  if (from && String(from.id) !== adminChatId && !notifiedUserIds.has(from.id)) {
+    notifiedUserIds.add(from.id);
+    const username = from.username ? `@${from.username}` : "(no username)";
+    bot.api
+      .sendMessage(adminChatId, `New user using your bot:\nUsername: ${username}\nUser ID: ${from.id}`)
+      .catch((err) => console.error("Failed to notify admin:", err));
+  }
+  await next();
+});
 
 bot.command("start", (ctx) =>
   ctx.reply(

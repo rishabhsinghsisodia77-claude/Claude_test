@@ -6,6 +6,7 @@ A general-purpose, always-on Telegram chatbot built with [grammY](https://grammy
 - `/help` - list of commands
 - `/reset` - clear conversation history for the current chat
 - Any other text message is sent to Gemini for a reply, with short per-chat conversation memory
+- Notifies the admin (you) on Telegram the first time a new user starts using the bot
 
 ## 1. Create the bot on Telegram
 
@@ -23,18 +24,25 @@ Bot for this project: [t.me/AskRishabh_bot](https://t.me/AskRishabh_bot)
 
 The free tier has rate limits (requests per minute/day). If you hit them, the bot replies with a fallback error message rather than crashing.
 
-## 3. Run it locally (optional, for testing)
+## 3. Get your Telegram user ID (for admin notifications)
+
+1. Message [@userinfobot](https://t.me/userinfobot) on Telegram.
+2. It replies instantly with your numeric user ID. Copy it — you'll set it as `ADMIN_CHAT_ID`.
+
+The bot uses this to message you whenever a new person starts using it (username + user ID only, once per unique user — it won't notify again for their later messages, though it will re-notify after a redeploy/restart since that list isn't persisted).
+
+## 4. Run it locally (optional, for testing)
 
 ```bash
 npm install
 cp .env.example .env
-# paste your values into .env: BOT_TOKEN=... and GEMINI_API_KEY=...
+# paste your values into .env: BOT_TOKEN=..., GEMINI_API_KEY=..., and ADMIN_CHAT_ID=...
 npm run dev
 ```
 
 Message your bot on Telegram — it should reply using Gemini.
 
-## 4. Deploy on Railway so it stays live 24/7
+## 5. Deploy on Railway so it stays live 24/7
 
 1. Push this repo to GitHub (already done if you're reading this from the repo).
 2. Go to [railway.app](https://railway.app) and sign in with GitHub.
@@ -42,6 +50,7 @@ Message your bot on Telegram — it should reply using Gemini.
 4. In the Railway project settings, go to **Variables** and add:
    - `BOT_TOKEN` = the token from BotFather
    - `GEMINI_API_KEY` = the key from Google AI Studio
+   - `ADMIN_CHAT_ID` = your numeric user ID from @userinfobot
 5. Railway detects the Node app, runs `npm run build` then `npm start` (see `railway.json`), and keeps the process running continuously. No inbound HTTP port is needed since the bot uses long polling.
 6. Every time you push to this branch, Railway redeploys automatically.
 
