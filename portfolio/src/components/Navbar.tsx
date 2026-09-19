@@ -28,6 +28,27 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock background scroll while the mobile menu is open. Plain `overflow:
+  // hidden` on body doesn't reliably stop scrolling on iOS Safari; pinning
+  // body with `position: fixed` and restoring scroll position on close is
+  // the standard workaround. This also avoids a real bug we hit on iOS
+  // Safari where scrolling the page while the "fixed" menu was open caused
+  // it to visually break and scatter its content down the page.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const scrollY = window.scrollY;
+    const { style } = document.body;
+    style.position = "fixed";
+    style.top = `-${scrollY}px`;
+    style.width = "100%";
+    return () => {
+      style.position = "";
+      style.top = "";
+      style.width = "";
+      window.scrollTo(0, scrollY);
+    };
+  }, [menuOpen]);
+
   return (
     <>
       <header
@@ -75,10 +96,9 @@ export default function Navbar() {
       </header>
 
       {/*
-        Rendered as a sibling of <header>, not nested inside it: Safari treats an
-        ancestor with backdrop-filter (our scrolled-state blur) as the containing
-        block for position:fixed descendants, which breaks this overlay's fixed
-        positioning. Keeping it outside <header> avoids that entirely.
+        Rendered as a sibling of <header>, not nested inside it, so it's never a
+        descendant of the scrolled-state backdrop-blur (which WebKit treats as a
+        new containing block for position:fixed descendants).
       */}
       <AnimatePresence>
         {menuOpen && (
@@ -87,7 +107,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-x-0 top-16 bottom-0 z-40 bg-background md:hidden"
+            className="fixed inset-x-0 top-16 z-40 h-[calc(100dvh-4rem)] bg-background md:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-6">
               {LINKS.map((link, i) => (
