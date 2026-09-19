@@ -14,13 +14,14 @@ export const profile = {
 
 export const about = {
   bio: [
-    "I'm a growth and analytics professional with a physics research background - B.Tech + M.Tech in Engineering Physics from IIT (BHU), Varanasi, followed by a PhD in Physics at IIT Delhi that I left in 2024 to move into industry. That pivot took me from open-ended theoretical problems to turning equally messy, ambiguous ones - pricing, retention, personalization at scale - into data-driven frameworks that ship measurable growth.",
+    "I'm a growth and analytics professional with a physics research background - B.Tech + M.Tech in Engineering Physics from IIT (BHU), Varanasi, followed by six months as a PhD Research Scholar in Physics at IIT Delhi, researching Quantum Chromodynamics before pivoting into industry in early 2024. That pivot took me from open-ended theoretical problems to turning equally messy, ambiguous ones - pricing, retention, personalization at scale - into data-driven frameworks that ship measurable growth.",
     "At Swiggy Instamart, I've owned growth charters spanning 90+ cities, built pricing and personalization systems reaching over a million users, and been promoted from Business Associate to Growth Manager within 12 months. I like getting close to the data, running fast experiments, and building the org-level playbooks that let a team keep winning after I've moved on.",
   ],
   highlights: [
     { label: "Years in growth & analytics", value: "2+" },
     { label: "Cities scaled across", value: "90+" },
     { label: "Awards & recognitions", value: "3" },
+    { label: "LinkedIn followers", value: "32K+" },
   ],
 };
 
@@ -52,9 +53,9 @@ export const initiatives: Initiative[] = [
     highlights: ["25K incremental daily orders", "40%+ customer penetration", "1,800 SKUs"],
   },
   {
-    title: "Rs 9 Store — Growth Strategy & Scale",
+    title: "₹9 Store — Growth Strategy & Scale",
     description:
-      "Owned the end-to-end growth charter for Rs 9 Store - pricing strategy, assortment planning, CRM, experimentation, analytics, stakeholder management, and city expansion.",
+      "Owned the end-to-end growth charter for the ₹9 Store - pricing strategy, assortment planning, CRM, experimentation, analytics, stakeholder management, and city expansion.",
     highlights: ["33K incremental daily orders", "30% platform penetration", "90+ cities"],
   },
   {
@@ -89,9 +90,9 @@ export const experience: ExperienceItem[] = [
   {
     role: "Business Associate",
     company: "Swiggy Instamart, Bengaluru",
-    period: "Apr 2025 - Apr 2026",
+    period: "Apr 2025 - Mar 2026",
     description:
-      "Owned the Rs 9 Store growth charter end-to-end, led an org-wide churn diagnostics initiative across 9 cities, and built a customer-level category affinity engine that improved festive campaign CTR by 2pp.",
+      "Owned the ₹9 Store growth charter end-to-end, led an org-wide churn diagnostics initiative across 9 cities, and built a customer-level category affinity engine that improved festive campaign CTR by 2pp.",
   },
   {
     role: "Senior Business Analyst",
@@ -111,10 +112,11 @@ export type EducationItem = {
 
 export const education: EducationItem[] = [
   {
-    degree: "PhD, Physics (left to join industry)",
+    degree: "PhD Research Scholar, Physics (left program)",
     institution: "Indian Institute of Technology Delhi",
-    period: "2023 - 2024",
-    description: "Left the program in 2024 to move into growth and analytics roles in industry.",
+    period: "Jul 2023 - Dec 2023",
+    description:
+      "Researched Quantum Chromodynamics under Prof. Tobias Toll before choosing to transition from academia into industry.",
   },
   {
     degree: "B.Tech + M.Tech, Engineering Physics",
@@ -138,7 +140,7 @@ export const awards: Award[] = [
   },
   {
     title: "Swiggsational Award",
-    description: "Awarded for outstanding execution and planning of the Rs 9 Store initiative.",
+    description: "Awarded for outstanding execution and planning of the ₹9 Store initiative.",
     period: "AMJ '26",
   },
   {
