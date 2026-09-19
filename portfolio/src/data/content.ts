@@ -6,7 +6,7 @@ export const profile = {
   title: "Growth Manager @ Swiggy Instamart",
   tagline: "I drive product-led growth through data, pricing strategy, and relentless experimentation.",
   location: "Bengaluru, India",
-  email: "rishabhsinghsisodia7@gmail.com",
+  email: "Rishabhsinghsisodia77@gmail.com",
   resumeUrl: "#",
   avatarUrl: "/avatar.jpg",
   socials: [{ label: "LinkedIn", href: "https://linkedin.com/in/rishabhsinghsisodia" }],
