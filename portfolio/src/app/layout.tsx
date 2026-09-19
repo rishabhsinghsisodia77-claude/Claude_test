@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import ThemeScript from "@/components/ui/ThemeScript";
 import CursorSpotlight from "@/components/ui/CursorSpotlight";
+import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { profile } from "@/data/content";
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className={`${inter.variable} ${fraunces.variable} font-sans antialiased`}>
         <CursorSpotlight />
+        <ScrollProgressBar />
         <Navbar />
         <main className="relative z-10">{children}</main>
         <Footer />

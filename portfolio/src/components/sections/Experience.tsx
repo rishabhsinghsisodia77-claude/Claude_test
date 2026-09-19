@@ -1,5 +1,6 @@
 import RevealOnScroll from "../ui/RevealOnScroll";
 import SectionHeading from "../ui/SectionHeading";
+import TimelineContainer from "../ui/TimelineContainer";
 import { experience } from "@/data/content";
 
 export default function Experience() {
@@ -8,7 +9,7 @@ export default function Experience() {
       <div className="mx-auto max-w-5xl">
         <SectionHeading kicker="Experience" title="Where I've worked" />
 
-        <div className="relative border-l border-border pl-8">
+        <TimelineContainer>
           {experience.map((item, i) => (
             <RevealOnScroll key={`${item.company}-${item.period}`} delay={i * 0.1} className="relative pb-12 last:pb-0">
               <span className="absolute top-1.5 -left-[calc(2rem+5px)] h-2.5 w-2.5 rounded-full bg-accent" />
@@ -18,7 +19,7 @@ export default function Experience() {
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">{item.description}</p>
             </RevealOnScroll>
           ))}
-        </div>
+        </TimelineContainer>
       </div>
     </section>
   );

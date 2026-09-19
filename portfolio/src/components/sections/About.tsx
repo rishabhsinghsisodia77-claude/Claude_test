@@ -1,5 +1,6 @@
 import RevealOnScroll from "../ui/RevealOnScroll";
 import SectionHeading from "../ui/SectionHeading";
+import AnimatedCounter from "../ui/AnimatedCounter";
 import { about } from "@/data/content";
 
 export default function About() {
@@ -18,7 +19,9 @@ export default function About() {
           <RevealOnScroll delay={0.2} className="grid grid-cols-3 gap-6 self-start md:grid-cols-1">
             {about.highlights.map((item) => (
               <div key={item.label} className="border-l-2 border-accent pl-4">
-                <p className="font-serif text-3xl text-foreground md:text-4xl">{item.value}</p>
+                <p className="font-serif text-3xl text-foreground md:text-4xl">
+                  <AnimatedCounter value={item.value} />
+                </p>
                 <p className="mt-1 text-sm text-muted">{item.label}</p>
               </div>
             ))}
