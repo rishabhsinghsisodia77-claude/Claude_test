@@ -8,7 +8,7 @@ export const profile = {
   location: "Mumbai, India",
   email: "your.email@example.com",
   resumeUrl: "#",
-  avatarInitials: "YN",
+  avatarUrl: "/avatar.jpg",
   socials: [
     { label: "GitHub", href: "https://github.com/yourusername" },
     { label: "LinkedIn", href: "https://linkedin.com/in/yourusername" },

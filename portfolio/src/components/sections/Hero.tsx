@@ -1,9 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
 import Magnetic from "../ui/Magnetic";
 import { profile } from "@/data/content";
+import { withBasePath } from "@/lib/basePath";
 
 export default function Hero() {
   return (
@@ -12,10 +14,26 @@ export default function Hero() {
       className="relative flex min-h-screen flex-col items-start justify-center px-6 md:px-10"
     >
       <div className="mx-auto w-full max-w-5xl">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="mb-6 h-28 w-28 overflow-hidden rounded-full border-2 border-accent"
+        >
+          <Image
+            src={withBasePath(profile.avatarUrl)}
+            alt={profile.name}
+            width={112}
+            height={112}
+            priority
+            className="h-full w-full object-cover"
+          />
+        </motion.div>
+
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-6 text-sm font-medium tracking-[0.2em] text-accent uppercase"
         >
           {profile.location}
@@ -24,7 +42,7 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
           className="font-serif text-5xl leading-[1.05] text-foreground sm:text-6xl md:text-7xl"
         >
           {profile.name}
@@ -33,7 +51,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-4 max-w-xl text-xl text-muted md:text-2xl"
         >
           {profile.title}
@@ -42,7 +60,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
           className="mt-6 max-w-lg text-base text-muted"
         >
           {profile.tagline}
@@ -51,7 +69,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
           className="mt-10 flex flex-wrap items-center gap-4"
         >
           <Magnetic>
