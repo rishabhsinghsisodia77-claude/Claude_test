@@ -149,6 +149,11 @@ export const awards: Award[] = [
     period: "March 2026",
   },
   {
+    title: "Annual Swiggstar Award",
+    description: "Awarded for outstanding contribution to the ₹9 Store, received after being promoted to Growth Manager.",
+    period: "2026",
+  },
+  {
     title: "Swiggstar Award",
     description: "Recognized for driving habit formation among early-stage users, improving long-term retention.",
     period: "JAS '25",
