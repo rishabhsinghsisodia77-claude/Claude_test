@@ -1,30 +1,26 @@
-// Placeholder content - replace every value here with your real details.
-// Nothing else in the codebase needs to change when you edit this file.
+// Real content for Rishabh Singh Sisodia's portfolio, sourced from his resume.
+// Edit any value here to update the site - nothing else needs to change.
 
 export const profile = {
-  name: "Your Name",
-  title: "Full-Stack Developer & Creative Technologist",
-  tagline: "I build fast, thoughtful products for the web.",
-  location: "Mumbai, India",
-  email: "your.email@example.com",
+  name: "Rishabh Singh Sisodia",
+  title: "Growth Manager @ Swiggy Instamart",
+  tagline: "I drive product-led growth through data, pricing strategy, and relentless experimentation.",
+  location: "Bengaluru, India",
+  email: "rishabhsinghsisodia7@gmail.com",
   resumeUrl: "#",
   avatarUrl: "/avatar.jpg",
-  socials: [
-    { label: "GitHub", href: "https://github.com/yourusername" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/yourusername" },
-    { label: "Twitter", href: "https://twitter.com/yourusername" },
-  ],
+  socials: [{ label: "LinkedIn", href: "https://linkedin.com/in/rishabhsinghsisodia" }],
 };
 
 export const about = {
   bio: [
-    "I'm a software engineer who enjoys turning ambiguous problems into clean, usable products. My background spans full-stack web development, with a particular interest in interfaces that feel alive - subtle motion, responsive feedback, and details most people won't consciously notice but will definitely feel.",
-    "Outside of shipping code, I like reading about design systems, tinkering with side projects, and finding the smallest possible solution to a problem before reaching for a bigger one.",
+    "I'm a growth and analytics professional with an engineering physics background from IIT (BHU), Varanasi. I've spent my career turning messy, ambiguous problems - pricing, retention, personalization at scale - into data-driven frameworks that ship measurable growth.",
+    "At Swiggy Instamart, I've owned growth charters spanning 90+ cities, built pricing and personalization systems reaching over a million users, and been promoted from Business Associate to Growth Manager within 12 months. I like getting close to the data, running fast experiments, and building the org-level playbooks that let a team keep winning after I've moved on.",
   ],
   highlights: [
-    { label: "Years of experience", value: "5+" },
-    { label: "Projects shipped", value: "20+" },
-    { label: "Companies worked with", value: "4" },
+    { label: "Years in growth & analytics", value: "2+" },
+    { label: "Cities scaled across", value: "90+" },
+    { label: "Awards & recognitions", value: "3" },
   ],
 };
 
@@ -34,50 +30,44 @@ export type SkillCategory = {
 };
 
 export const skills: SkillCategory[] = [
-  { category: "Languages", items: ["TypeScript", "JavaScript", "Python", "SQL"] },
-  { category: "Frontend", items: ["React", "Next.js", "Tailwind CSS", "Framer Motion"] },
-  { category: "Backend", items: ["Node.js", "PostgreSQL", "REST APIs", "GraphQL"] },
-  { category: "Tools", items: ["Git", "Docker", "Figma", "Vercel"] },
+  { category: "Analytics & Data", items: ["SQL", "Python", "Excel", "VBA", "Google Analytics", "Data Studio", "Mixpanel"] },
+  {
+    category: "Strategy & Growth",
+    items: ["GTM Strategy", "A/B Testing", "Funnel Analysis", "Cohort Analysis", "Pricing & Revenue Optimization", "Stakeholder Management"],
+  },
+  { category: "AI-Assisted Tools", items: ["Vibe Coding", "Claude Code"] },
 ];
 
-export type Project = {
+export type Initiative = {
   title: string;
   description: string;
-  tech: string[];
-  liveUrl?: string;
-  codeUrl?: string;
+  highlights: string[];
 };
 
-export const projects: Project[] = [
+export const initiatives: Initiative[] = [
   {
-    title: "Project One",
+    title: "Fresh as a Destination",
     description:
-      "A short, concrete description of what this project does, who it's for, and the problem it solves. Swap in a real project with a link.",
-    tech: ["Next.js", "TypeScript", "Postgres"],
-    liveUrl: "#",
-    codeUrl: "#",
+      "Drove product-led growth for the Fresh category, a high-retention vertical, by architecting a gateway SKU and differential pricing framework across 1,800 SKUs to convert first-time trial into repeat behavior.",
+    highlights: ["25K incremental daily orders", "40%+ customer penetration", "1,800 SKUs"],
   },
   {
-    title: "Project Two",
+    title: "Rs 9 Store — Growth Strategy & Scale",
     description:
-      "Another real project goes here. Describe the interesting technical decision you made, not just the feature list.",
-    tech: ["React", "Node.js", "Redis"],
-    liveUrl: "#",
-    codeUrl: "#",
+      "Owned the end-to-end growth charter for Rs 9 Store - pricing strategy, assortment planning, CRM, experimentation, analytics, stakeholder management, and city expansion.",
+    highlights: ["33K incremental daily orders", "30% platform penetration", "90+ cities"],
   },
   {
-    title: "Project Three",
+    title: "WhatsApp Personalization at Scale",
     description:
-      "A third project - maybe a side project or open-source contribution that shows range beyond your day job.",
-    tech: ["Python", "FastAPI"],
-    codeUrl: "#",
+      "Owned one of Instamart's largest personalization initiatives, generating creatives at scale across a million user-item combinations to lift click-through and campaign traffic.",
+    highlights: ["900K+ creatives generated", "4% CTR (4x BAU)", "+20% campaign traffic"],
   },
   {
-    title: "Project Four",
+    title: "Global Sporting Events Pricing",
     description:
-      "Keep the strongest projects near the top. Each card tilts toward the cursor - hover to see it.",
-    tech: ["Swift", "SwiftUI"],
-    liveUrl: "#",
+      "Built pricing and demand optimization models for global sporting events including the FIFA World Cup 2026 and Olympics 2024, increasing revenue opportunity through forecasting and pricing simulations.",
+    highlights: ["+35% revenue opportunity", "Demand forecasting", "Pricing simulations"],
   },
 ];
 
@@ -90,24 +80,25 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
-    role: "Senior Software Engineer",
-    company: "Company Name",
-    period: "2023 - Present",
+    role: "Growth Manager",
+    company: "Swiggy Instamart, Bengaluru",
+    period: "Apr 2026 - Present",
     description:
-      "Describe your scope and a couple of concrete outcomes - what you built, what changed because of it, roughly how much impact it had.",
+      "Driving product-led growth for the Fresh category and scaling the Fresh-led growth playbook into a formal charter within the Performance Management team, spanning 40 cities and 7 categories.",
   },
   {
-    role: "Software Engineer",
-    company: "Previous Company",
-    period: "2021 - 2023",
+    role: "Business Associate",
+    company: "Swiggy Instamart, Bengaluru",
+    period: "Apr 2025 - Apr 2026",
     description:
-      "Same format: what you owned, what you shipped, and a result worth bragging about.",
+      "Owned the Rs 9 Store growth charter end-to-end, led an org-wide churn diagnostics initiative across 9 cities, and built a customer-level category affinity engine that improved festive campaign CTR by 2pp.",
   },
   {
-    role: "Junior Developer",
-    company: "First Company",
-    period: "2019 - 2021",
-    description: "Where you started - the skills you built here that still matter today.",
+    role: "Senior Business Analyst",
+    company: "Accordion, Hyderabad",
+    period: "Jan 2024 - Apr 2025",
+    description:
+      "Built pricing and demand optimization models for global sporting events, led advanced analytics engagements across 2 client accounts, and automated reporting workflows to cut manual effort by 25 hours/week.",
   },
 ];
 
@@ -120,30 +111,48 @@ export type EducationItem = {
 
 export const education: EducationItem[] = [
   {
-    degree: "B.Tech in Computer Science",
-    institution: "Your University",
-    period: "2015 - 2019",
-    description: "Relevant coursework, honors, or activities worth mentioning.",
+    degree: "B.Tech + M.Tech, Engineering Physics",
+    institution: "Indian Institute of Technology (BHU), Varanasi",
+    period: "2018 - 2023",
+    description: "CGPA: 9.26/10",
   },
 ];
 
-export type Testimonial = {
-  quote: string;
-  name: string;
-  role: string;
+export type Award = {
+  title: string;
+  description: string;
+  period: string;
 };
 
-export const testimonials: Testimonial[] = [
+export const awards: Award[] = [
   {
-    quote:
-      "A short, specific quote about working with you - what stood out, not generic praise. Swap in a real one from a manager, teammate, or client.",
-    name: "Reference Name",
-    role: "Their Role, Their Company",
+    title: "Promoted to Growth Manager",
+    description: "Promoted from Business Associate to Growth Manager within 12 months of joining.",
+    period: "2026",
   },
   {
-    quote:
-      "Two or three real testimonials are much stronger than several vague ones. Ask a former manager or client for a sentence or two.",
-    name: "Another Reference",
-    role: "Their Role, Their Company",
+    title: "Swiggsational Award",
+    description: "Awarded for outstanding execution and planning of the Rs 9 Store initiative.",
+    period: "AMJ '26",
   },
+  {
+    title: "MAD Award",
+    description: "Recognized for driving growth in the Fresh category through cross-functional collaboration.",
+    period: "March 2026",
+  },
+  {
+    title: "Swiggstar Award",
+    description: "Recognized for driving habit formation among early-stage users, improving long-term retention.",
+    period: "JAS '25",
+  },
+];
+
+export type Certification = {
+  name: string;
+  issuer: string;
+};
+
+export const certifications: Certification[] = [
+  { name: "SQL (Advanced, Intermediate, Basic)", issuer: "HackerRank" },
+  { name: "Python", issuer: "Coursera" },
 ];

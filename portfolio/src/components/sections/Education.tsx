@@ -1,6 +1,6 @@
 import RevealOnScroll from "../ui/RevealOnScroll";
 import SectionHeading from "../ui/SectionHeading";
-import { education } from "@/data/content";
+import { certifications, education } from "@/data/content";
 
 export default function Education() {
   return (
@@ -21,6 +21,21 @@ export default function Education() {
               </div>
             </RevealOnScroll>
           ))}
+
+          {certifications.length > 0 && (
+            <RevealOnScroll delay={education.length * 0.1}>
+              <div className="rounded-2xl border border-border bg-surface p-8">
+                <p className="text-sm font-medium tracking-[0.15em] text-accent uppercase">Certifications</p>
+                <ul className="mt-3 space-y-2">
+                  {certifications.map((cert) => (
+                    <li key={cert.name} className="text-sm text-muted">
+                      <span className="text-foreground">{cert.name}</span> — {cert.issuer}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </RevealOnScroll>
+          )}
         </div>
       </div>
     </section>

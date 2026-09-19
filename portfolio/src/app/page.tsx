@@ -1,10 +1,10 @@
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
-import Projects from "@/components/sections/Projects";
+import Initiatives from "@/components/sections/Initiatives";
 import Experience from "@/components/sections/Experience";
 import Education from "@/components/sections/Education";
-import Testimonials from "@/components/sections/Testimonials";
+import Awards from "@/components/sections/Awards";
 import Contact from "@/components/sections/Contact";
 
 export default function Home() {
@@ -13,10 +13,10 @@ export default function Home() {
       <Hero />
       <About />
       <Skills />
-      <Projects />
+      <Initiatives />
       <Experience />
       <Education />
-      <Testimonials />
+      <Awards />
       <Contact />
     </>
   );
